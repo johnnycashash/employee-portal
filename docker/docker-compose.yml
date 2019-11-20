@@ -1,0 +1,32 @@
+version: '3'
+services:
+  employee-portal:
+    build: ../employee-portal
+    ports:
+      - "4000:4000"
+    depends_on:
+     - employeedb
+  dbclient:
+    image: "dpage/pgadmin4"
+    container_name: "dbclient"
+    environment:
+     - PGADMIN_DEFAULT_EMAIL=jagan@gmail.com
+     - PGADMIN_DEFAULT_PASSWORD=a12345678
+    depends_on:
+     - employeedb
+    ports:
+      - "5050:5050"
+  employeedb:
+    image: "postgres"
+    container_name: "employeedb"
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=employeedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+     external: true

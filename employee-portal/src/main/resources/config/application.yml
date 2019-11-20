@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: employee-portal
+  profiles:
+    active: dev
+  jackson:
+    serialization:
+      indent_output: true
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: ["health"]
+  port: 4000
+
+server:
+  port: 4000

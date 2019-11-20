@@ -1,0 +1,21 @@
+logging:
+  file: ${home:${user.home}}/${spring.application.name}/dev/${spring.application.name}-dev.log
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+    com:
+      sg:
+        ep: DEBUG
+spring:
+  profiles: test
+  jpa:
+    database-platform: org.hibernate.dialect.HSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:hsqldb:mem:employeedb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
