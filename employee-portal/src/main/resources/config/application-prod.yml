@@ -1,0 +1,28 @@
+logging.file: ${home:${user.home}}/${spring.application.name}/prod/${spring.application.name}-dev.log
+logging:
+  file:
+    max-history: 10
+    max-size: 100MB
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+    com:
+      sg:
+        ep: DEBUG
+spring:
+  profiles: prod
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://192.168.99.100:5432/employeedb
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver

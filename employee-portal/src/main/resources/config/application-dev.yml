@@ -1,0 +1,24 @@
+logging.file: ${home:${user.home}}/${spring.application.name}/dev/${spring.application.name}-dev.log
+logging:
+  file:
+    max-history: 7
+    max-size: 50MB
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+    com:
+      sg:
+        ep: DEBUG
+spring:
+  profiles: dev
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:h2:mem:employeedb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
