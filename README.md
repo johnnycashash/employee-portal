@@ -1,5 +1,5 @@
-# employee-portal
-employee-portal
+# Employee-Portal
+Employee-Portal Application to register and get employee data
 
 ## Please refer to readme file inside employee-portal application for manually running application as docker config is still under development
 
