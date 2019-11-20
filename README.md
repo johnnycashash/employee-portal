@@ -1,6 +1,8 @@
 # employee-portal
 employee-portal
 
+## Please refer to readme file inside employee-portal application for manually running application as docker config is still under development
+
 mvn clean package<br>
 docker volume create --name=pgdata<br>
 docker-compose build<br>
